@@ -6,11 +6,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity(name = "character")
+@Entity(name = "personage")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Character {
+public class Personage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

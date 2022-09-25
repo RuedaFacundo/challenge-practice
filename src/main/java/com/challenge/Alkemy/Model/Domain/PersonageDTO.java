@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CharacterDTO {
+public class PersonageDTO {
 
     public String name;
     public Integer age;
