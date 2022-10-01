@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/personage")
@@ -34,5 +35,27 @@ public class PersonageController {
         map.put("Name: ", personageDTO.getName());
         map.put("message: ", "Saved successfully");
         return map;
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<PersonageDTO> getById(@PathVariable(name = "id") int id){
+        return ResponseEntity.ok(
+                personageService.getById(id)
+        );
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<String> delete(@PathVariable(name = "id") int id) {
+        return ResponseEntity.ok(
+                personageService.delete(id)
+        );
+    }
+
+    @PutMapping()
+    public ResponseEntity<String> put(@RequestBody @NotNull PersonageDTO dto) {
+        return ResponseEntity.ok(
+                Objects.nonNull(personageService.updatePersonage(dto)) ?
+                        "Registro actualizado correctamente" : "No se pudo actualizar el registro"
+        );
     }
 }

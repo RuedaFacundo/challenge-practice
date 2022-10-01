@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PersonageDTO {
 
+    public Integer id;
     public String name;
     public Integer age;
     public Float weigth;
