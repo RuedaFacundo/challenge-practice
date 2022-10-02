@@ -7,7 +7,6 @@ import com.challenge.Alkemy.Model.Repositories.PersonageRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -46,7 +45,7 @@ public class PersonageService {
 
     public PersonageDTO updatePersonage(PersonageDTO dto) {
         Optional<Personage> personage = personageRepository.findById(dto.getId());
-        if (Objects.nonNull(personage)  && personage.isPresent()) {
+        if (personage != null && personage.isPresent()) {
             // TODO Check the optional handle, if its better with orElseThrow
             return personageMapper.entityToDto(
                     personageRepository.save(
