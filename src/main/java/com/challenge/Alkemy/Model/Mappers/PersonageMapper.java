@@ -14,6 +14,7 @@ public class PersonageMapper {
                 .ofNullable(entity)
                 .map(
                        ent -> new PersonageDTO(
+                               ent.getId(),
                                ent.getName(),
                                ent.getAge(),
                                ent.getWeigth(),
@@ -25,6 +26,7 @@ public class PersonageMapper {
 
     public Personage dtoToEntity(PersonageDTO dto) {
         Personage personage = new Personage();
+        personage.setId(dto.getId());
         personage.setName(dto.getName());
         personage.setAge(dto.getAge());
         personage.setWeigth(dto.getWeigth());
