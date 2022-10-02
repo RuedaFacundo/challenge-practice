@@ -52,10 +52,10 @@ public class PersonageController {
     }
 
     @PutMapping()
-    public ResponseEntity<String> put(@RequestBody @NotNull PersonageDTO dto) {
+    public ResponseEntity<String> update(@RequestBody @NotNull PersonageDTO dto) {
         return ResponseEntity.ok(
                 Objects.nonNull(personageService.updatePersonage(dto)) ?
-                        "Registro actualizado correctamente" : "No se pudo actualizar el registro"
+                        "Registry updated successfully" : "Could not update record"
         );
     }
 }

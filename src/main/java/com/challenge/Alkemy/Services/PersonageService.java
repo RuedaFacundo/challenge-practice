@@ -60,7 +60,7 @@ public class PersonageService {
     public String delete(int id) {
         if (personageRepository.existsById(id)) {
             personageRepository.deleteById(id);
-            return "Registro eliminado";
+            return "Record deleted successfully";
         } else {
             // TODO Add the persongae exception
             return null;
